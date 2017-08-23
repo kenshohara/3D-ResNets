@@ -35,20 +35,19 @@ sudo cp ./ffmpeg-release-64bit-static/ffmpeg /usr/local/bin
 ## Preparation
 ### ActivityNet
 * Download datasets
-* Convert from avi to jpg files using utils/video_jpg.py
-  * ```python utils/video_jpg.py avi_video_directory jpg_video_directory```
-* Generate fps files using utils/fps.py
-  * ```python utils/fps.py avi_video_directory jpg_video_directory```
+* Convert from avi to jpg files using utils/video_jpg.py  
+```python utils/video_jpg.py avi_video_directory jpg_video_directory```
+* Generate fps files using utils/fps.py  
+```python utils/fps.py avi_video_directory jpg_video_directory```
 
 ### Kinetics
 * Download datasets
-  * test set
-* Convert from avi to jpg files using utils/video_jpg_kinetics.py
-  * ```python utils/video_jpg_kinetics.py avi_video_directory jpg_video_directory```
-* Generate n_frames files using utils/n_frames_kinetics.py
-  * ```python utils/n_frames_kinetics.py jpg_video_directory```
-* Generate annotation file in json format similar to ActivityNet using utils/kinetics_json.py
-  * ```python utils/kinetics_json.py train_csv_path val_csv_path test_csv_path json_path```
+* Convert from avi to jpg files using utils/video_jpg_kinetics.py  
+```python utils/video_jpg_kinetics.py avi_video_directory jpg_video_directory```
+* Generate n_frames files using utils/n_frames_kinetics.py  
+```python utils/n_frames_kinetics.py jpg_video_directory```
+* Generate annotation file in json format similar to ActivityNet using utils/kinetics_json.py  
+```python utils/kinetics_json.py train_csv_path val_csv_path test_csv_path json_path```
 
 ## Running the code
-* ```th main.py```
+```th main.py```
