@@ -1,8 +1,8 @@
 if opt.begin_epoch == 1 then
   if opt.model == 'c3d' then
-    dofile('c3d.lua')
+    dofile('models/c3d.lua')
   elseif opt.model == 'resnet' then
-    dofile('resnet.lua')
+    dofile('models/resnet.lua')
   end
   model = create_model()
   if not opt.no_cuda then
