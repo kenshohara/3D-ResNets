@@ -7,12 +7,17 @@ Kensho Hara, Hirokatsu Kataoka, and Yutaka Satoh,
 ## Citation
 If you use this code or pre-trained models, please cite the following:
 ```
-@article{
-
+@article{hara3dresnets
+  author={Kensho Hara and Hirokatsu Kataoka and Yutaka Satoh}
+  title={Learning Spatio-Temporal Features with 3D Residual Networks for Action Recognition}
+  journal={arXiv preprint}
+  volume={arXiv:}
+  year={2017}
 }
 ```
 
 ## Pre-trained models
+Pre-trained models will be available soon.
 
 ## Requirements
 * [Torch](http://torch.ch/)
@@ -62,5 +67,6 @@ python utils/kinetics_json.py train_csv_path val_csv_path test_csv_path json_pat
 
 ## Running the code
 ```
-th main.py
+th main.lua --root_path ... --video_path ...
+
 ```
