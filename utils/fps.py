@@ -1,3 +1,4 @@
+from __future__ import print_function, division
 import os
 import sys
 import subprocess
@@ -28,10 +29,10 @@ if __name__=="__main__":
 
     n_frames = len(os.listdir(dst_directory_path))
     if os.path.exists(os.path.join(dst_directory_path, 'fps')):
-      n_frames -= 1 
+      n_frames -= 1
 
     fps = round(n_frames / total_sec, 2)
-  
+
     print(video_file_path, os.path.exists(video_file_path), fps)
     with open(os.path.join(dst_directory_path, 'fps'), 'w') as fps_file:
       fps_file.write('{}\n'.format(fps))

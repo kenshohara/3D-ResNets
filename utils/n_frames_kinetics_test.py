@@ -1,3 +1,4 @@
+from __future__ import print_function, division
 import os
 import sys
 import subprocess
@@ -14,7 +15,7 @@ for file_name in os.listdir(class_path):
     if 'image' not in image_file_name:
       continue
     image_indices.append(int(image_file_name[6:11]))
-    
+
   if len(image_indices) == 0:
     print('no image files', video_dir_path)
     n_frames = 0

@@ -1,3 +1,4 @@
+from __future__ import print_function, division
 import os
 import sys
 import subprocess
@@ -16,7 +17,7 @@ def class_process(dir_path, dst_dir_path, class_name):
       continue
     name, ext = os.path.splitext(file_name)
     dst_directory_path = os.path.join(dst_class_path, name)
- 
+
     video_file_path = os.path.join(class_path, file_name)
     try:
       if os.path.exists(dst_directory_path):
@@ -42,6 +43,6 @@ if __name__=="__main__":
 
   for class_name in os.listdir(dir_path):
     class_process(dir_path, dst_dir_path, class_name)
-  
+
   class_name = 'test'
   class_process(dir_path, dst_dir_path, class_name)

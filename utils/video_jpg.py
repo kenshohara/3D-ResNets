@@ -1,3 +1,4 @@
+from __future__ import print_function, division
 import os
 import sys
 import subprocess
@@ -12,7 +13,7 @@ if __name__=="__main__":
       continue
     name, ext = os.path.splitext(file_name)
     dst_directory_path = os.path.join(dst_dir_path, name)
- 
+
     video_file_path = os.path.join(dir_path, file_name)
     try:
       if os.path.exists(dst_directory_path):
