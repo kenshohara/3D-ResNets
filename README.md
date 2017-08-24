@@ -102,19 +102,22 @@ Train ResNets-34 on the Kinetics dataset (400 classes) with 4 CPU threads (for d
 Batch size is 128.  
 Save models at every 5 epochs.
 ```
-th main.lua --root_path ~/data --video_path kinetics_videos/jpg --annotation_path kinetics.json --result_path results --lr_path LR/Kinetics/lr.lua \
---dataset kinetics --model resnet --resnet_depth 34 --n_classes 400 --batch_size 128 --n_gpu 2 --n_threads 4 --checkpoint 5
+th main.lua --root_path ~/data --video_path kinetics_videos/jpg --annotation_path kinetics.json \
+--result_path results --lr_path LR/Kinetics/lr.lua --dataset kinetics --model resnet \
+--resnet_depth 34 --n_classes 400 --batch_size 128 --n_gpu 2 --n_threads 4 --checkpoint 5
 ```
 
 Continue Training from epoch 101. (~/data/results/model_100.t7 is loaded.)
 ```
-th main.lua --root_path ~/data --video_path kinetics_videos/jpg --annotation_path kinetics.json --result_path results --lr_path LR/Kinetics/lr.lua \
---dataset kinetics --begin_epoch 101 --batch_size 128 --n_gpu 2 --n_threads 4 --checkpoint 5
+th main.lua --root_path ~/data --video_path kinetics_videos/jpg --annotation_path kinetics.json \
+--result_path results --lr_path LR/Kinetics/lr.lua --dataset kinetics --begin_epoch 101 \
+--batch_size 128 --n_gpu 2 --n_threads 4 --checkpoint 5
 ```
 
 Perform recognition for each video of validation set using pretrained model.
 This operation outputs top-10 labels for each video.
 ```
-th main.lua --root_path ~/data --video_path kinetics_videos/jpg --annotation_path kinetics.json --result_path results --premodel_path models/resnet.t7 \
---dataset kinetics --no_train --no_val --test_video --test_subset val --n_gpu 2 --n_threads 4
+th main.lua --root_path ~/data --video_path kinetics_videos/jpg --annotation_path kinetics.json \
+--result_path results --premodel_path models/resnet.t7 --dataset kinetics \
+--no_train --no_val --test_video --test_subset val --n_gpu 2 --n_threads 4
 ```
