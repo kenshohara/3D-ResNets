@@ -63,7 +63,7 @@ for i = opt.begin_epoch, opt.n_epochs do
     end
     train_epoch()
   end
-  if not opt.no_test then
+  if not opt.no_val then
     val_epoch()
   end
 end
