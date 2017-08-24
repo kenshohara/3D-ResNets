@@ -44,8 +44,8 @@ if not opt.no_train then
 
   dofile('train.lua')
 end
-if not opt.no_test then
-  dofile('test.lua')
+if not opt.no_val then
+  dofile('val.lua')
 end
 
 print('run')
@@ -64,7 +64,7 @@ for i = opt.begin_epoch, opt.n_epochs do
     train_epoch()
   end
   if not opt.no_test then
-    test_epoch()
+    val_epoch()
   end
 end
 

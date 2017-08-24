@@ -1,4 +1,4 @@
-test_logger = optim.Logger(paths.concat(opt.result_path, 'test.log'))
+val_logger = optim.Logger(paths.concat(opt.result_path, 'val.log'))
 
 local batch_number
 local loss
@@ -6,7 +6,7 @@ local acc
 local epoch_size
 local timer = torch.Timer()
 
-local function prepare_test_batch()
+local function prepare_val_batch()
   local sample_validation_data = {}
   for i = 1, #validation_data do
     local video_directory_path = validation_data[i].video
@@ -28,7 +28,7 @@ local function prepare_test_batch()
   return sample_validation_data
 end
 
-function test_epoch()
+function val_epoch()
   batch_number = 0
   if not opt.no_cuda then
     cutorch.synchronize()
@@ -37,7 +37,7 @@ function test_epoch()
 
   model:evaluate()
   print('==> validation epoch # ' .. epoch)
-  local sample_validation_data = prepare_test_batch()
+  local sample_validation_data = prepare_val_batch()
   local n_samples = #sample_validation_data
   epoch_size = math.ceil(n_samples / opt.batch_size)
 
@@ -69,7 +69,7 @@ function test_epoch()
 
           return inputs, targets
         end,
-        test_batch
+        val_batch
     )
   end
 
@@ -81,13 +81,13 @@ function test_epoch()
   loss = loss / epoch_size
   acc = acc / n_samples
 
-  test_logger:add{
+  val_logger:add{
     ['epoch'] = epoch,
     ['loss'] = loss,
     ['acc'] = acc,
     ['lr'] = optim_state.learningRate
   }
-  print(string.format('Epoch: [%d][TESTING SUMMARY] Total Time(s): %.2f \t Loss: %.2f \t Acc: %.3f\n',
+  print(string.format('Epoch: [%d][VALIDATION SUMMARY] Total Time(s): %.2f \t Loss: %.2f \t Acc: %.3f\n',
     epoch, timer:time().real, loss, acc))
 end
 
@@ -98,7 +98,7 @@ if not opt.no_cuda then
   targets = torch.CudaTensor()
 end
 
-function test_batch(inputs_cpu, targets_cpu)
+function val_batch(inputs_cpu, targets_cpu)
   if not opt.no_cuda then
     inputs:resize(inputs_cpu:size()):copy(inputs_cpu)
     targets:resize(targets_cpu:size()):copy(targets_cpu)
@@ -131,6 +131,6 @@ function test_batch(inputs_cpu, targets_cpu)
   end
 
   batch_number = batch_number + 1
-  print(string.format('Epoch: Testing [%d][%d/%d] \t Loss %.4f \t Acc %.3f', epoch, batch_number, epoch_size, loss_batch, acc_batch))
+  print(string.format('Epoch: Validation [%d][%d/%d] \t Loss %.4f \t Acc %.3f', epoch, batch_number, epoch_size, loss_batch, acc_batch))
   collectgarbage()
 end
