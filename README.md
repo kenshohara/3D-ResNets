@@ -2,7 +2,9 @@
 This is the torch code for the following paper:
 
 Kensho Hara, Hirokatsu Kataoka, and Yutaka Satoh,  
-"Learning Spatio-Temporal Features with 3D Residual Networks for Action Recognition".
+"Learning Spatio-Temporal Features with 3D Residual Networks for Action Recognition"
+
+The paper will appear in ICCV 2017 Workshop (Chalearn).
 
 ## Citation
 If you use this code or pre-trained models, please cite the following:
@@ -17,7 +19,7 @@ If you use this code or pre-trained models, please cite the following:
 ```
 
 ## Pre-trained models
-Pre-trained models will be available soon.
+Pre-trained models are available at [releases](https://github.com/kenshohara/3D-ResNets/releases/tag/1.0).
 
 ## Requirements
 * [Torch](http://torch.ch/)
