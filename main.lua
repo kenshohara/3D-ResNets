@@ -1,5 +1,4 @@
 require('torch')
-require('cutorch')
 require('nn')
 require('image')
 require('optim')
@@ -13,6 +12,7 @@ json.save(paths.concat(opt.result_path, 'opts.json'), opt)
 torch.manualSeed(opt.manual_seed)
 
 if not opt.no_cuda then
+  require('cutorch')
   require('cunn')
   require('cudnn')
   cudnn.fastest = true
