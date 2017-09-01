@@ -6,7 +6,7 @@ import subprocess
 def class_process(dir_path, class_name):
   class_path = os.path.join(dir_path, class_name)
   if not os.path.isdir(class_path):
-    continue
+    return
 
   for file_name in os.listdir(class_path):
     video_dir_path = os.path.join(class_path, file_name)
