@@ -8,8 +8,8 @@ arXiv preprint, arXiv:1708.07632, 2017.
 The paper will appear in ICCV 2017 Workshop (Chalearn).  
 
 This code includes only training and testing on the ActivityNet and Kinetics datasets.  
-If you want to classify your videos using our pretrained models,
-use [this code](https://github.com/kenshohara/video-classification-3d-cnn).
+**If you want to classify your videos using our pretrained models,
+use [this code](https://github.com/kenshohara/video-classification-3d-cnn).**
 
 ## Citation
 If you use this code or pre-trained models, please cite the following:
