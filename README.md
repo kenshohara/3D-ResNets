@@ -11,6 +11,8 @@ This code includes only training and testing on the ActivityNet and Kinetics dat
 **If you want to classify your videos using our pretrained models,
 use [this code](https://github.com/kenshohara/video-classification-3d-cnn).**
 
+**The PyTorch (python) version of this code is available [here](https://github.com/kenshohara/3D-ResNets-PyTorch).**
+
 ## Citation
 If you use this code or pre-trained models, please cite the following:
 ```
