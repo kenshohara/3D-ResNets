@@ -1,11 +1,17 @@
 # 3D ResNets for Action Recognition
-This is the torch code for [the following paper](https://arxiv.org/abs/1708.07632):
+This is the PyTorch code for the following papers:
 
+[
+Kensho Hara, Hirokatsu Kataoka, and Yutaka Satoh,  
+"Can Spatiotemporal 3D CNNs Retrace the History of 2D CNNs and ImageNet?",  
+arXiv preprint, arXiv:1711.09577, 2017.
+](https://arxiv.org/abs/1711.09577)
+
+[
 Kensho Hara, Hirokatsu Kataoka, and Yutaka Satoh,  
 "Learning Spatio-Temporal Features with 3D Residual Networks for Action Recognition",  
-arXiv preprint, arXiv:1708.07632, 2017.
-
-The paper will appear in ICCV 2017 Workshop (Chalearn).  
+Proceedings of the ICCV Workshop on Action, Gesture, and Emotion Recognition, 2017.
+](http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w44/Hara_Learning_Spatio-Temporal_Features_ICCV_2017_paper.pdf)
 
 This code includes only training and testing on the ActivityNet and Kinetics datasets.  
 **If you want to classify your videos using our pretrained models,
@@ -17,12 +23,12 @@ The PyTorch version includes additional models, such as pre-activation ResNet, W
 ## Citation
 If you use this code or pre-trained models, please cite the following:
 ```
-@article{hara3dresnets
-  author={Kensho Hara and Hirokatsu Kataoka and Yutaka Satoh}
-  title={Learning Spatio-Temporal Features with 3D Residual Networks for Action Recognition}
-  journal={arXiv preprint}
-  volume={arXiv:1708.07632}
-  year={2017}
+@article{hara3dcnns,
+  author={Kensho Hara and Hirokatsu Kataoka and Yutaka Satoh},
+  title={Can Spatiotemporal 3D CNNs Retrace the History of 2D CNNs and ImageNet?},
+  journal={arXiv preprint},
+  volume={arXiv:1711.09577},
+  year={2017},
 }
 ```
 
